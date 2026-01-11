@@ -9,7 +9,7 @@ jobs:                    #Jobs
       - name: checkout stage
         uses: actions/checkout@v4   #Checkout code
       - name:  run file 
-        run: Start-Process welcome-nk.html   #Run file
+        run: cat welcome-nk.html #Start-Process welcome-nk.html   #Run file
 
       
       
