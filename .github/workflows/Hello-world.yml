@@ -18,8 +18,8 @@ jobs:
       - name: Deploy HTML file
         run: |
           aws s3 sync ./ s3://gha-static-s3/ \
-          --exclude "*"
-          --include"welcome-nk.html"      
+            --exclude "*" \
+            --include "welcome-nk.html"
 
 
         
