@@ -1,17 +1,22 @@
-name: CICD
+name: Deploy html to s3 bucket
 on:
   push:
     branches:
       - main
-      
 jobs:
   Secrete-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Print html content
-        run: cat welcome-nk.html
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{AWS_ACCESS_KEY_ID}}
+          aws-secret-key: ${{AWS_SECRET_ACCESS_KEY}}
+          aws-region: ap-south-1
+        
+        #run:  welcome-nk.html
 
 
         
