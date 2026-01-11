@@ -6,4 +6,6 @@ jobs:                               #Define Jobs sections
     runs-on: ubuntu-latest          #Define on which targer or runner you want this job to execute
     steps:                          #Define Steps -> small tasks that make a job
       - name: Hello world step      #Define name of the step
-        run: echo "Hellow World"    #Define the Task
+        run: |
+          echo "Hellow World"                #Define the Task
+          echo "Welcome to GitHub Actions"   #Define multiple commands using "|"
