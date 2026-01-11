@@ -1,7 +1,12 @@
 name: CICD demo
 on:
-  [pull_request]      #Trigger
-
+  push:
+    branches:
+      - main
+      - feature/poc      #Trigger
+  pull_request:
+    branches: 
+      - main
 jobs:                    #Jobs
   Build:
     runs-on: ubuntu-latest        #Each job should have its on runner
