@@ -1,6 +1,6 @@
 name: CICD demo
 on:
-  workflow_dispatch      #Trigger
+  [push]      #Trigger
 
 jobs:                    #Jobs
   Build:
