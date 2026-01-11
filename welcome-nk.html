@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome NK</title>
+  <style>
+    :root{--bg1:#0f1724;--bg2:#1f3a57;--bg3:#2b5873}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,system-ui;background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));color:#fff}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;overflow:hidden;padding:3rem}
+    h1{font-size:clamp(2.2rem,6vw,5rem);margin:0 0 1.75rem;text-align:center;letter-spacing:1px;background:linear-gradient(90deg,#ff6b6b,#feca57,#48dbfb,#1dd1a1);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .tile{width:160px;height:160px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:3rem;background:linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));backdrop-filter:blur(6px);box-shadow:0 12px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.06);}
+    /* Snow container and flakes */
+    .snow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+    .flake{position:absolute;top:-10vh;color:#fff;opacity:0.9;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.45));will-change:transform,opacity}
+    @keyframes fall{0%{transform:translateY(-10vh) rotate(0deg);opacity:0}10%{opacity:1}100%{transform:translateY(110vh) rotate(360deg);opacity:0.9}}
+    /* small responsive tweaks */
+    @media (max-width:420px){.tile{width:120px;height:120px;font-size:2.2rem}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Welcome "NK"</h1>
+    <div class="tile" id="tile">NK</div>
+    <div class="snow" id="snow"></div>
+  </div>
+
+  <script>
+    // Create animated snowflakes
+    const SNOW_COUNT = 70;
+    const snowEl = document.getElementById('snow');
+    for(let i=0;i<SNOW_COUNT;i++){
+      const f = document.createElement('div');
+      f.className = 'flake';
+      const size = (Math.random()*14)+6; // 6-20px
+      const left = Math.random()*100;
+      const delay = (Math.random()*-20).toFixed(2);
+      const duration = (Math.random()*10+8).toFixed(2);
+      f.style.fontSize = size+'px';
+      f.style.left = left + '%';
+      f.style.top = (Math.random()*-100) + 'vh';
+      f.style.opacity = (Math.random()*0.6 + 0.35).toFixed(2);
+      f.style.animation = `fall ${duration}s linear ${delay}s infinite`;
+      f.textContent = '❄';
+      snowEl.appendChild(f);
+    }
+  </script>
+</body>
+</html>
