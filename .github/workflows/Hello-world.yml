@@ -8,8 +8,10 @@ jobs:
   Secrete-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Print html content
         run: cat welcome-nk.html
 
-        
+
         
