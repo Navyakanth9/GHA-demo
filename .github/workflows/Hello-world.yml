@@ -1,6 +1,6 @@
 name: CICD demo
 on:
-  [push]      #Trigger
+  [pull_request]      #Trigger
 
 jobs:                    #Jobs
   Build:
