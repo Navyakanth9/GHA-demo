@@ -15,7 +15,7 @@ jobs:                    #Jobs
     runs-on: ubuntu-latest
     steps:
       - name: testing phase
-        run: echo "Test successfully "
+        run: echo "Test successful"
   Deploy:
     needs: Test
     runs-on: ubuntu-latest
