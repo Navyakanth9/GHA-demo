@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Secrete test
-        run: echo "${{secrete.DOCKER_KEY}}"
+        run: echo "${{secret.DOCKER_KEY}}"
         
