@@ -1,6 +1,6 @@
 name: CICD demo
 on:
-  [pull_request]      #Trigger
+  workflow_dispatch      #Trigger
 
 jobs:                    #Jobs
   Build:
@@ -8,22 +8,8 @@ jobs:                    #Jobs
     steps:
       - name: Build step
         run: |
-          echo "Building started..."
-          echo "Build Successful !"
-  Test:
-    needs: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: testing phase
-        run: echo "Test successful"
-  Deploy:
-    needs: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy stage
-        run: |
-          echo "Deploying the artifacts..."
-          echo "Deployement Successful !"
+          echo "Welcome ${{vars.MY_NAME}}"
+
       
       
       
