@@ -1,11 +1,27 @@
-name: GHA demo                      #Define name of the workflow
-on: workflow_dispatch               #Define Trigger for manual option
+name: CICD demo
+on:
+  workflow_dispatch      #Trigger
 
-jobs:                               #Define Jobs sections    
-  Hello-world:                      #Define name of the job
-    runs-on: ubuntu-latest          #Define on which targer or runner you want this job to execute
-    steps:                          #Define Steps -> small tasks that make a job
-      - name: Hello world step      #Define name of the step
+jobs:                    #Jobs
+  Build:
+    runs-on: ubuntu-latest        #Each job should have its on runner
+    steps:
+      - name: Build step
         run: |
-          echo "Hellow World"                #Define the Task
-          echo "Welcome to GitHub Actions"   #Define multiple commands using "|"
+          echo "Building started..."
+          echo "Building Successful !"
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing phase
+        run: echo "Testing completed successfully "
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy stage
+        run: |
+          echo "Deploying the artifacts"
+          echo "Deploying Successful !"
+      
+      
+      
