@@ -9,19 +9,21 @@ jobs:                    #Jobs
       - name: Build step
         run: |
           echo "Building started..."
-          echo "Building Successful !"
+          echo "Build Successful !"
   Test:
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - name: testing phase
-        run: echo "Testing completed successfully "
+        run: echo "Test successfully "
   Deploy:
+    needs: Test
     runs-on: ubuntu-latest
     steps:
       - name: Deploy stage
         run: |
-          echo "Deploying the artifacts"
-          echo "Deploying Successful !"
+          echo "Deploying the artifacts..."
+          echo "Deployement Successful !"
       
       
       
