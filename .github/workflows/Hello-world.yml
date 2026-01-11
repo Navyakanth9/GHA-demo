@@ -1,16 +1,13 @@
-name: CICD demo
+name: CICD
 on:
-  workflow_dispatch      #Trigger
-
-jobs:                    #Jobs
-  Build:
-    runs-on: ubuntu-latest        #Each job should have its on runner
+  push:
+    branches:
+      - main
+      
+jobs:
+  Secrete-test:
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout stage
-        uses: actions/checkout@v4   #Checkout code
-      - name:  run file 
-        run: cat welcome-nk.html #Start-Process welcome-nk.html   #Run file
-
-      
-      
-      
+      - name: Secrete test
+        run: echo "${{secrete.DOCKER_KEY}}"
+        
