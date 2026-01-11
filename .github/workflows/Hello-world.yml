@@ -8,6 +8,8 @@ jobs:
   Secrete-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Secrete test
-        run: echo " ${{secrets.DOCKER_KEY}} "
+      - name: Print html content
+        run: cat welcome-nk.html
+
+        
         
