@@ -6,11 +6,18 @@ on:
        description: 'Choose env for deploy'
        required: true
        default: 'dev'
+       type: choice
+       options:
+         - dev
+         - test
+     tag:
+       description: "Select tag"
+       required: true
 
 jobs:
  build:
    runs-on: ubuntu-latest
    steps:
      - name: deploy to env
-       run: echo "print env ${{inputs.Environment}} "
+       run: echo "deploying tag ${{inputs.tag}} in env ${{inputs.Environment}}"
  
