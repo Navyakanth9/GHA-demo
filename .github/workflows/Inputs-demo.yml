@@ -1,0 +1,16 @@
+name: inputs demo
+on: 
+  workflow_dispatch:
+    inputs:
+     Environment:
+       description: 'Choose env for deploy'
+       required: true
+       default: 'dev'
+
+jobs:
+ build:
+   runs-on: ubuntu-latest
+   steps:
+     - name: deploy to env
+       run: echo "print env ${{inputs.Environment}} "
+ 
