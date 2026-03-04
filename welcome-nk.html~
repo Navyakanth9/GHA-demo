@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Happy Holi!</title>
+  <title>Welcome Holi</title>
   <style>
     :root{--bg1:#0f1724;--bg2:#1f3a57;--bg3:#2b5873}
     *{box-sizing:border-box}
